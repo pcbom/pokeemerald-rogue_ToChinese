@@ -201,9 +201,9 @@ script Rogue_PreIntro
     bufferstring(STR_VAR_2, gText_RogueVersionPrefix)
     bufferstring(STR_VAR_3, gText_RogueVersionSuffix)
 
-    msgbox(format("{COLOR BLUE}Welcome to Emerald Rogue {STR_VAR_2}\n{STR_VAR_1} {STR_VAR_3}!\pA few things before you get started…"))
+    msgbox(format("{COLOR BLUE}欢迎来到绿宝石Rogue {STR_VAR_2}\n{STR_VAR_1} {STR_VAR_3}!\p在开始前有几件事…"))
 
-    msgbox(format("{COLOR BLUE}Firstly, please select an initial difficulty.\p(This can be changed in the Config Lab)"))
+    msgbox(format("{COLOR BLUE}首先, 请选择初始难度.\p(可以在配置实验室中更改)"))
     special(Special_ViewDifficultyConfigMenu)
     waitstate
 
@@ -213,15 +213,15 @@ script Rogue_PreIntro
         ROGUE_VERSION_VANILLA
         {
             setvar(VAR_ROGUE_INITIAL_DEX_SELECTION, 0)
-            msgbox(format("{COLOR BLUE}Finally, as you are playing Vanilla version, you will be limited to the original Pokémon and battle mechanics of Pokémon Emerald.\pIf you would like to play with modern mechanics and Pokémon up to generation 9, please play the EX version instead."))
+            msgbox(format("{COLOR BLUE}由于您玩的是VA版,将仅限于宝可梦绿宝石的原始宝可梦和战斗机制.\p如果您想体验现代机制和全九世代的宝可梦,请改玩EX版."))
         }
         ROGUE_VERSION_EXPANSION
         {
-            message(format("{COLOR BLUE}Finally, for your first Adventure-\pWhat encounters would you like?\n(Select an option to learn more)"))
+            message(format("{COLOR BLUE}对于您的第一次探险-\p您想要什么样的奇遇?\n(选择选项了解更多信息)"))
             setvar(VAR_RESULT, NO)
 
             while(var(VAR_RESULT) == NO)
-            {
+            {   
                 waitmessage
 
                 multichoice(20, 7, MULTI_CLASSIC_MODERN, TRUE)
@@ -231,23 +231,23 @@ script Rogue_PreIntro
                 {
                     case 0: // Modern
                         setvar(VAR_ROGUE_INITIAL_DEX_SELECTION, 0)
-                        msgbox(format("{COLOR BLUE}You'll encounter a selection of Pokémon from across all 9 generations.\pSo Modern is your preference?"), MSGBOX_YESNO)
+                        msgbox(format("{COLOR BLUE}您将遇到从全九世代中精选的宝可梦.\p您更喜欢现代风格吗?"), MSGBOX_YESNO)
                         
 
                     case 1: // Classic
                         setvar(VAR_ROGUE_INITIAL_DEX_SELECTION, 1)
-                        msgbox(format("{COLOR BLUE}You'll encounter Pokémon from generations 1 to 3 along with any future evolutions and forms added.\pSo Classic is your preference?"), MSGBOX_YESNO)
+                        msgbox(format("{COLOR BLUE}您将遇到第一至三世代的宝可梦\n以及他们未来世代的进化和新增形态.\p您更喜欢经典风格吗?"), MSGBOX_YESNO)
                 }
 
                 if(var(VAR_RESULT) == NO)
                 {
-                    message(format("{COLOR BLUE}For your first Adventure-\pWhat encounters would you like?\n(Select an option to learn more)"))
+                    message(format("{COLOR BLUE}对于您的第一次探险-\p您想要什么样的奇遇?\n(选择选项了解更多信息)"))
                 }
             }
         }
     }
 
-    msgbox(format("{COLOR BLUE}You're now all ready to go.\nI hope you enjoy Emerald Rogue!"))
+    msgbox(format("{COLOR BLUE}现在您已经准备好了.\n希望喜欢绿宝石Rogue!"))
     closemessage
 }
 
@@ -266,7 +266,7 @@ script Rogue_Intro_MapScripts_LoadFrame_0
     // Fade in screen
     //
     delay(60)
-    msgbox(format("… … …\p… … …!\pHey… … …!\pCan you hear me?"), MSGBOX_AUTOCLOSE)
+    msgbox(format("… … …\p… … …!\p喂… … …!\p能听清吗?"), MSGBOX_AUTOCLOSE)
 
     setobjectxy(OBJ_LOCAL_ID_PROF, COORD_CENTRE_X, COORD_CENTRE_Y)
     
@@ -276,8 +276,8 @@ script Rogue_Intro_MapScripts_LoadFrame_0
 
     msgbox(format
     (
-        "Oh thank goodness!\pYou took quite the fall it seems.\pCan you tell me what you remember?\p… … …\p"
-        "Hmm…\nIt looks like you may have a mild case of amnesia.\pLet me see if I can jog your memory a bit."
+        "谢天谢地!\p你看起来摔得不轻.\p你能告诉我你记得什么吗?\p… … …\p"
+        "emm…\n看来你可能有轻微的失忆.\p让我看看能否唤起你的记忆."
     ), MSGBOX_AUTOCLOSE)
 
     playbgm(MUS_RG_NEW_GAME_EXIT, FALSE)
@@ -287,7 +287,7 @@ script Rogue_Intro_MapScripts_LoadFrame_0
 
     // Pokemon walking anims
     //
-    msgbox(format("I am Professor Elm."))
+    msgbox(format("我是空木博士."))
 
     call(Rogue_Intro_PlayAnim_FlyingMons)
     call(Rogue_Intro_PlayAnim_FightMons)
@@ -295,15 +295,15 @@ script Rogue_Intro_MapScripts_LoadFrame_0
     call(Rogue_Intro_PlayAnim_ParentChildMon)
 
     msgbox(format(
-        "ELM: Pokémon inhabit every inch of this world… Be it land, sky or sea!\p"
-        "Pokémon are the friends of many and, for some, they even train and fight alongside their Pokémon in an attempt to become a Pokémon Champion!\p"
-        "I myself study Pokémon to try and understand what makes each and every species unique!\p"
+        "空木: 在这个世界里,到处都生活\n着一种叫做宝可梦的生物… \p无论是陆地,天空还是海洋!\p"
+        "宝可梦是许多人的朋友,\n有些人与自己的宝可梦一起训练和战斗,\p挑战成为宝可梦冠军!\p"
+        "我自己也在研究宝可梦,\n试图了解每个宝可梦的独特之处!\p"
 
-        "The world has changed quite a lot recently…\p"
-        "Routes within the world seem to be connecting up at random. Making exploring even more difficult.\p"
-        "Though there is one thing for sure, trainers are still out there and itching for battles!\p"
+        "世界最近发生了很大变化…\p"
+        "世界中的路线似乎变成了随意连接,\n这让探险变得更加困难.\p"
+        "但有一点可以肯定,\n训练家们仍然在外面,而且渴望战斗!\p"
 
-        "Now…\nLet me put your memory to the test…"
+        "现在…\n让我来测试一下你的记忆…"
     ))
 
     waitmovement(OBJ_LOCAL_ID_FOLLOWMON_PARENT)
@@ -323,9 +323,9 @@ script Rogue_Intro_MapScripts_LoadFrame_0
     }
 
     msgbox(format(
-        "Phew…\pYou had me worried for a second then {PLAYER}!\p"
-        "It looks like your memory is working fine to me!\p"
-        "Come on now, let's try and get you standing up."
+        "呼…\p你让我担心了好一会儿 {PLAYER}!\p"
+        "看起来你的记忆已经恢复!\p"
+        "来吧,试着站起来."
     ))
 
     special(Rogue_AssignDefaultRegion)
@@ -345,22 +345,22 @@ script Rogue_Intro_MapScripts_LoadFrame_0
 
 script Rogue_Intro_CustomisePlayer
 {
-    msgbox(format("Do you remember what you look like?"))
+    msgbox(format("你还记得自己长什么样吗?"))
     fadescreen(FADE_TO_BLACK)
     special(Special_ViewPlayerCustomisationMenu)
     waitstate
 
-    msgbox(format("And what is your name?"))
+    msgbox(format("你叫什么名字?"))
     fadescreen(FADE_TO_BLACK)
     special(ChangePlayerNickname)
     waitstate
 
-    msgbox(format("And finally…\pWe set out in a small group to build up a new village.\pWhat is the name of the village?"))
+    msgbox(format("最后…\p我们开始建设新的村庄.\p村庄的名称是什么?"))
     fadescreen(FADE_TO_BLACK)
     special(ChangePokemonHubName)
     waitstate
 
-    msgbox(format("So you're {PLAYER} living in {POKEMON_HUB}?"), MSGBOX_YESNO)
+    msgbox(format("所以你的名字是 {PLAYER} ，\n生活在 {POKEMON_HUB}?"), MSGBOX_YESNO)
 }
 
 script Rogue_Intro_PlayAnim_ParentChildMon
