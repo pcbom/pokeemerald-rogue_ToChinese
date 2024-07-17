@@ -79,17 +79,17 @@ enum
     TD_PREVIOUS_MENUSELECTION_TOP,
 };
 
-static u8 const sMenuName_Back[] = _("Back");
-static u8 const sMenuName_SaveAndExit[] = _("Save & Exit");
-static u8 const sMenuName_DifficultySubmenu[] = _("Edit Difficulty");
-static u8 const sMenuName_AdventureSubmenu[] = _("Adventure");
+static u8 const sMenuName_Back[] = _("返回");
+static u8 const sMenuName_SaveAndExit[] = _("保存并退出");
+static u8 const sMenuName_DifficultySubmenu[] = _("定制难度");
+static u8 const sMenuName_AdventureSubmenu[] = _("冒险设置");
 static u8 const sMenuName_TrainersSubmenu[] = _("Trainers");
 static u8 const sMenuName_GameModesSubmenu[] = _("Game Modes");
 
-static u8 const sMenuName_BattleFormat[] = _("Battle Format");
-static u8 const sMenuName_BattleFormatSingles[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Singles");
-static u8 const sMenuName_BattleFormatDoubles[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Doubles");
-static u8 const sMenuName_BattleFormatMixed[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Mixed");
+static u8 const sMenuName_BattleFormat[] = _("战斗形式");
+static u8 const sMenuName_BattleFormatSingles[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}单打");
+static u8 const sMenuName_BattleFormatDoubles[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}双打");
+static u8 const sMenuName_BattleFormatMixed[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}混合");
 
 //static u8 const sMenuName_TrainerOrder[] = _("Trainer Order");
 //static u8 const sMenuName_TrainerOrderDefault[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Default");
@@ -102,9 +102,9 @@ static u8 const sMenuName_GameMode_Official[] = _("Official");
 static u8 const sMenuName_GameMode_Gauntlet[] = _("Gauntlet");
 static u8 const sMenuName_GameMode_RainbowGauntlet[] = _("Rainbow Gauntlet");
 
-static u8 const sMenuName_Affection[] = _("Affection FX");
-static u8 const sMenuName_ReleaseMons[] = _("Release Fainted {PKMN}");
-static u8 const sMenuName_TrainerDiversity[] = _("Diverse Trainer {PKMN}");
+static u8 const sMenuName_Affection[] = _("高亲密度特效");
+static u8 const sMenuName_ReleaseMons[] = _("强制放生");
+static u8 const sMenuName_TrainerDiversity[] = _("训练师多样化");
 
 static u8 const sMenuName_TrainerRogue[] = _("Rogue");
 static u8 const sMenuName_TrainerKanto[] = _("Kanto");
@@ -123,27 +123,27 @@ static u8 const sText_ErrorInvalidSelection[] = _("Error: {COLOR GREEN}{SHADOW L
 
 const u8 sMenuNameDesc_PresetDescription_Easy[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "For those who want a casual experience,\n"
-    "comparable to modern {PKMN} games."
+    "更适合想要轻松游玩的玩家,\n"
+    "难度与正统宝可梦作品相当."
 );
 const u8 sMenuNameDesc_PresetDescription_Average[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "Recommended for those who have good {PKMN}\n"
-    "knowledge and enjoy a challenge."
+    "推荐给相对资深,并且\n"
+    "一定程度上喜欢挑战的玩家."
 );
 const u8 sMenuNameDesc_PresetDescription_Hard[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "A punishing experience intended for\n"
-    "those who enjoy increased difficulty."
+    "推荐给热爱高难度挑战的玩家,\n"
+    "这是一场严峻的考验."
 );
 const u8 sMenuNameDesc_PresetDescription_Brutal[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "An even more punishing experience than\n"
-    "Hard, for those who want to suffer."
+    "如果你觉得困难模式不够过瘾,\n"
+    "这将是比困难更加严酷的折磨."
 );
 const u8 sMenuNameDesc_PresetDescription_Custom[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "Your rules, your way!"
+    "一切规则由你自己决定!"
 );
 static u8 const* const sMenuNameDesc_PresetDescription[] = 
 {
@@ -157,13 +157,13 @@ static u8 const* const sMenuNameDesc_PresetDescription[] =
 
 const u8 sMenuNameDesc_DifficultyOverLvlOff[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "{PKMN} will stop gaining lvls once they\n"
-    "reach the Level Cap."
+    "队伍中的宝可梦达到某一阶段的\n"
+    "等级上限时，将会停止升级."
 );
 const u8 sMenuNameDesc_DifficultyOverLvlOn[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "{PKMN} can gain levels over the Level Cap.\n"
-    "(After the Level Cap, will Level slowly)"
+    "宝可梦即使达到某阶段的等级上限，\n"
+    "仍会以较慢的经验值获取速度升级."
 );
 static u8 const* const sMenuNameDesc_DifficultyOverLvl[] = 
 {
@@ -185,16 +185,16 @@ static u8 const sMenuNameDesc_GameModesSubmenu[] = _(
 
 static u8 const sMenuNameDesc_BattleFormatSingles[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "Trainer Battles will always be 1v1."
+    "训练师战斗总是以单打方式进行."
 );
 static u8 const sMenuNameDesc_BattleFormatDoubles[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "Trainer Battles will always be 2v2."
+    "训练师战斗总是以双打方式进行."
 );
 static u8 const sMenuNameDesc_BattleFormatMixed[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "Trainer Battles will randomly be 1v1 or\n"
-    "2v2. (Equal chance for both)"
+    "训练师战斗会在双打和单打中\n"
+    "随机进行."
 );
 static u8 const* const sMenuNameDesc_BattleFormat[] = 
 {
@@ -205,20 +205,20 @@ static u8 const* const sMenuNameDesc_BattleFormat[] =
 
 const u8 sMenuNameDesc_Affection[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "{PKMN} with high friendship may have special\n"
-    "effects e.g. enduring, extra crits etc."
+    "高亲密的宝可梦可以产生特殊效果,\n"
+    "比如濒死不退场或提高暴击率等."
 );
 
 const u8 sMenuNameDesc_ReleaseMonsOn[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "When {PKMN} faint, they will be released.\n"
-    "from your party."
+    "当你队伍中的宝可梦濒死时\n"
+    "它会被强制放生."
 );
 
 const u8 sMenuNameDesc_ReleaseMonsOff[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "Fainted {PKMN} will remain in your party, but\n"
-    "can only be revived by Nurses or Revives."
+    "濒死的宝可梦可以留在队伍中,但只能\n"
+    "由宝可梦中心的护士和复活药来复活."
 );
 static u8 const* const sMenuNameDesc_ReleaseMons[] = 
 {
@@ -228,13 +228,13 @@ static u8 const* const sMenuNameDesc_ReleaseMons[] =
 
 const u8 sMenuNameDesc_TrainerDiversityOff[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "Trainers will mostly stick to their type\n"
-    "specialties e.g. Brock has Rock"
+    "训练师大多数会使用他们的特色宝可梦\n"
+    "比如小刚会使用他擅长的岩石系宝可梦"
 );
 const u8 sMenuNameDesc_TrainerDiversityOn[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "Trainers can have wider type specialties\n"
-    "e.g. Brock has a mix of Rock & Steel"
+    "训练师们可以拥有更广泛的属性专长\n"
+    "比如小刚会拥有岩钢混合的宝可梦队伍"
 );
 static u8 const* const sMenuNameDesc_TrainerDiversity[] = 
 {
@@ -326,13 +326,13 @@ static u8 const sMenuNameDesc_GameMode_RainbowGauntlet[] = _(
 
 static const u8 sText_DifficultyExpAllDescOff[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "Only {PKMN} send into battle will be awarded\n"
-    "Exp. (Not recommended)"
+    "只有出场的宝可梦才能\n"
+    "获得经验值"
 );
 static const u8 sText_DifficultyExpAllDescOn[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "All {PKMN} in the party will be awarded Exp.\n"
-    "even if they didn't enter the battle."
+    "队伍中所有的宝可梦,即使没有\n"
+    "参加战斗也能获取经验值."
 );
 static u8 const* const sText_DifficultyExpAllDesc[] = 
 {
@@ -343,13 +343,13 @@ static u8 const* const sText_DifficultyExpAllDesc[] =
 
 static const u8 sText_DifficultyOverworldMonsDescOff[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "Wild {PKMN} will spawn randomly as you move.\n"
-    "(Classic {PKMN} Game style encounters)"
+    "野生的宝可梦会在你移动时随机出现.\n"
+    "(就像传统宝可梦游戏的遭遇方式一样)"
 );
 static const u8 sText_DifficultyOverworldMonsDescOn[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "Wild {PKMN} can be encounted and interacted\n"
-    "with in the overworld."
+    "野生的宝可梦会直接出现在地图上,\n"
+    "与你遭遇和互动"
 );
 static u8 const* const sText_DifficultyOverworldMonsDesc[] = 
 {
@@ -360,12 +360,12 @@ static u8 const* const sText_DifficultyOverworldMonsDesc[] =
 
 const u8 sText_DifficultyEVGainDescOff[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "All {PKMN} will never have EVs."
+    "所有宝可梦都不会拥有努力值."
 );
 const u8 sText_DifficultyEVGainDescOn[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "{PKMN} gain EVs from Trainer battles based\n"
-    "on their nature.(Trainers never have EVs)"
+    "宝可梦会在战斗后获得努力值\n"
+    "但训练师们的宝可梦无努力值."
 );
 static u8 const* const sText_DifficultyEVGainDesc[] = 
 {
@@ -376,13 +376,13 @@ static u8 const* const sText_DifficultyEVGainDesc[] =
 
 const u8 sText_DifficultySwitchModeDescOff[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "After fainting an opposing {PKMN}, you will\n"
-    "not be able to switch out until your turn."
+    "在击倒对手宝可梦时，你无法直接\n"
+    "切换宝可梦，直到该回合结束."
 );
 const u8 sText_DifficultySwitchModeDescOn[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "After fainting an opposing {PKMN} you will be\n"
-    "given a chance to switch out immediately."
+    "在击倒对手宝可梦后，\n"
+    "你可以立即选择切换宝可梦."
 );
 static u8 const* const sText_DifficultySwitchModeDesc[] = 
 {
@@ -393,13 +393,13 @@ static u8 const* const sText_DifficultySwitchModeDesc[] =
 
 const u8 sText_DifficultyBagWipeDescOff[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "You can take all Meta-Progression\n"
-    "into Adventures. (e.g. Items, Day Care)"
+    "你在冒险之外的所有强化内容\n"
+    "都可以带入冒险中(比如道具等)."
 );
 const u8 sText_DifficultyBagWipeDescOn[] = _(
     "{COLOR GREEN}{SHADOW LIGHT_GREEN}"
-    "Only your Partner {PKMN} and Key Items will\n"
-    "be taken into runs."
+    "你只能携带初始宝可梦和\n"
+    "关键道具进入每次冒险."
 );
 static u8 const* const sText_DifficultyBagWipeDesc[] = 
 {
