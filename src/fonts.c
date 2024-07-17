@@ -290,3 +290,7 @@ ALIGNED(4) const u8 gFontShortJapaneseGlyphWidths[] = {
     10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
     10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10,
 };
+
+ALIGNED(4) const u16 gFont0ChineseGlyphs [] = INCBIN_U16("graphics/fonts/font0_chinese.latfont");
+
+ALIGNED(4) const u16 gFont1ChineseGlyphs [] = INCBIN_U16("graphics/fonts/font1_chinese.latfont");
