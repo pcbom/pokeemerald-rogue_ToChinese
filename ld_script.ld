@@ -343,6 +343,7 @@ SECTIONS {
         src/international_string_util.o(.text);
         src/pokemon_debug.o(.text);
         src/expansion_intro.o(.text);
+        src/chinese_text.o(.text);
     } > ROM =0
 
     script_data :
@@ -710,6 +711,7 @@ SECTIONS {
         data/sound_data.o(.rodata);
         src/pokemon_debug.o(.rodata);
         src/expansion_intro.o(.rodata);
+        src/chinese_text.o(.rodata);
     } > ROM =0
 
     song_data :
