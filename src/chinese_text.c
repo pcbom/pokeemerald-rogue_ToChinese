@@ -5,20 +5,13 @@
 //检测是否为汉字编码
 bool8 IsChineseChar(u16 currChar, u16 nextChar, u8 fontId, bool32 isJapanese)
 {
-    //排除日文文本、盲文字体
-    if(isJapanese == TRUE && fontId == FONT_BRAILLE)
-        return FALSE;
-
-    //检查汉字编码双字节高位是否满足要求
-    if(currChar>=0x01 && currChar <= 0x1E && currChar != 0x06 && currChar != 0x1B)
-    {
-        //检查汉字编码双字节低位是否满足要求
-        if(nextChar <= 0xF6)
-            return TRUE;
-    }
-
-    //不符合汉字编码条件
-    return FALSE;
+    if( isJapanese != TRUE &&                   //排除日文
+        fontId != FONT_BRAILLE &&               //排除盲文
+        currChar >= 0x01 && currChar <= 0x1E && //检查汉字编码双字节高位是否满足要求
+        currChar != 0x06 && currChar != 0x1B && //检查汉字编码双字节高位是否满足要求
+        nextChar <= 0xF6)                       //检查汉字编码双字节低位是否满足要求
+        return TRUE;
+    return FALSE;                               //不符合汉字编码条件
 }
 
 //仅在通过IsChineseChar检测后使用
